@@ -1,0 +1,27 @@
+[
+    
+    {
+        "image":"../cogebanque.png",
+        "title":"COGEBANQUE",
+        "service":"service 1",
+        "ssdNo":"#495"
+    },
+    {
+        "image":"/assets/cogebanque.png",
+        "title":"BANK OF KIGALI",
+        "service":"service 2",
+        "ssdNo":"#495"
+    },
+    {
+        "image":"/assets/cogebanque.png",
+        "title":"I&M BANK",
+        "service":"service 3",
+        "ssdNo":"#495"
+    },{
+        "image":"/assets/cogebanque.png",
+        "title":"I&M BANK",
+        "service":"service 3",
+        "ssdNo":"#495"
+    }
+
+]
