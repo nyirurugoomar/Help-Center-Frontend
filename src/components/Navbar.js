@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React,{ useState } from "react";
+import {NavLink} from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 import google from "./assets/google.svg";
 import facebook from "./assets/facebook.svg";
+import Dashboard from "./Dashboard";
+
 // import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [loginDialog, setLoginDialog] = useState(false);
+  const navlink = NavLink
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const handleNav = () => {
     setNav(!nav);
@@ -17,6 +23,14 @@ const Navbar = () => {
   const toggleLoginDialog = () => {
     setLoginDialog(!loginDialog);
   };
+
+  const handleLogin=()=>{
+       if(email === "user@gmail.com" && password ==="password"){
+         navlink.push(<Dashboard/>);
+       }else{
+        // Handle login failure (e.g., show an error message)
+       }
+  }
 
   return (
     <div className="flex justify-between items-center h-20  px-10 bg-[#1B1464] ">
@@ -97,6 +111,8 @@ const Navbar = () => {
                     type="email"
                     name=""
                     id=""
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="border-[1px] w-[470px] h-[45px] border-black rounded-[9px] p-2"
                     placeholder="Enter your email"
                   />
@@ -107,6 +123,8 @@ const Navbar = () => {
                     type="password"
                     name=""
                     id=""
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     className="border-[1px] w-[470px] h-[45px] border-black rounded-[9px] p-2"
                     placeholder="Enter your password"
                   />
@@ -119,7 +137,7 @@ const Navbar = () => {
               </div>
 
               <div className="text-center p-4">
-                <button className="bg-[#1B1464] p-4 w-[419px] rounded-[9px] text-white font-bold">
+                <button className="bg-[#1B1464] p-4 w-[419px] rounded-[9px] text-white font-bold" onClick={handleLogin}>
                   Sign In
                 </button>
               </div>
