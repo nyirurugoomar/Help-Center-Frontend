@@ -1,17 +1,10 @@
 
 import './App.css';
-import Card from './components/Card';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import Search from './components/Search';
-
+import Home from './components/Home';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <Search/>
-      <Card/>
-      <Footer/>
+      <Home/>
     </div>
   );
 }

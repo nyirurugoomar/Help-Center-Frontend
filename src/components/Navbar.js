@@ -5,6 +5,8 @@ import { IoIosArrowDown } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 import google from "./assets/google.svg";
 import facebook from "./assets/facebook.svg";
+import line1 from './assets/Line 1.svg'
+import line2 from './assets/Line 2.svg'
 import Dashboard from "./Dashboard";
 
 // import { NavLink } from "react-router-dom";
@@ -26,7 +28,7 @@ const Navbar = () => {
 
   const handleLogin=()=>{
        if(email === "user@gmail.com" && password ==="password"){
-         navlink.push(<Dashboard/>);
+         navlink(<Dashboard/>);
        }else{
         // Handle login failure (e.g., show an error message)
        }
@@ -67,7 +69,7 @@ const Navbar = () => {
 
         {loginDialog && (
           <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-40 flex justify-center items-center">
-            <div className="bg-white p-4 rounded-lg w-[655px] h-[569px]">
+            <div className="bg-white p-4 rounded-lg w-[655px] h-[649px]">
               <RxCross1
                 className="block ml-auto cursor-pointer"
                 size={30}
@@ -103,6 +105,14 @@ const Navbar = () => {
                     </p>
                   </button>
                 </div>
+
+              </div>
+              {/* lines */}
+              <div className=" flex mx-12 mt-10 gap-4  ">
+                <img src={line1} className="w-60" alt=""/>
+                <h1 className="text-[20px]">or</h1>
+                <img src={line2} className="w-60" alt=""/>
+
               </div>
               <div className="mx-20 mt-8 space-y-4">
                 <div className="">
@@ -128,7 +138,7 @@ const Navbar = () => {
                     className="border-[1px] w-[470px] h-[45px] border-black rounded-[9px] p-2"
                     placeholder="Enter your password"
                   />
-                  <div className="text-right">
+                  <div className="text-right cursor-pointer">
                     <h1 className="text-[#1B1464] font-bold ">
                       Forget Password
                     </h1>
