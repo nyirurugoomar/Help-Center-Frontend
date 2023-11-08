@@ -12,7 +12,7 @@ function Card() {
                 <div className='flex gap-4'>
                   <img src={card.image} alt="" className='rounded-[10px] w-12 h-12' />
                   <div>
-                    <h2 className="text-xl font-semibold text-[27px]">{card.title}</h2>
+                    <h2 className="text-xl font-semibold text-[27px] text-center">{card.title}</h2>
                     <p className='font-bold text-center'>{card.service}</p>
                   </div>
                 </div>

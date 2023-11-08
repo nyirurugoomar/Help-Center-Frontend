@@ -22,19 +22,19 @@ function Footer() {
           <div className=' mt-6'>
             <h1 className='text-white'>Please let's know</h1>
             <div className='flex gap-8 mt-2'>
-            <BsEmojiSmile size={40}/>
-             <ImSad size={40}/>
+            <BsEmojiSmile size={40} className='cursor-pointer'/>
+             <ImSad size={40} className='cursor-pointer'/>
             </div>
              
              
           </div>
-          <div className='mt-6'>
-             <h1 className='text-2xl'>Contant US</h1>
+          <div className='mt-6 '>
+             <h1 className='text-xl'>Contant US</h1>
              <h1><span className='font-bold'>Tel:</span>+250-787-435-234</h1>
              <h1><span className='font-bold'>Email:</span>support@gmail.com</h1>
           </div>
         </div>
-        <h1 className='text-center text-white text-sm font-think'>Copyright © COMPANY NAME 2023</h1>
+        <h1 className='text-center text-white text-sm font-think p-2'>Copyright © COMPANY NAME 2023</h1>
       </div>
     </div>
     </>
