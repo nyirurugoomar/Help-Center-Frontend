@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
@@ -7,15 +7,12 @@ import google from "./assets/google.svg";
 import facebook from "./assets/facebook.svg";
 import line1 from "./assets/Line 1.svg";
 import line2 from "./assets/Line 2.svg";
-import Dashboard from "./Dashboard";
-
-// import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [loginDialog, setLoginDialog] = useState(false);
   const [signup, setSignup] = useState(false);
-  const navlink = NavLink;
+  // const navlink = NavLink;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -31,34 +28,36 @@ const Navbar = () => {
   };
 
   const handleLogin = () => {
-    if (email === "user@gmail.com" && password === "password") {
-      navlink(<Dashboard />);
-    } else {
-      // Handle login failure (e.g., show an error message)
-    }
+    // if (email === "user@gmail.com" && password === "password") {
+    //   navlink(<Dashboard />);
+    // } else {
+    //   // Handle login failure (e.g., show an error message)
+    // }
   };
 
   return (
     <div className="flex justify-between items-center h-20  px-10 bg-[#1B1464] ">
-      {/* <h1 className='w-40'><img src={logo} alt=''/></h1> */}
       <h1 className="text-white font-bold text-[20px]">Logo|Help Center</h1>
       <ul className="hidden md:flex">
-        {/* <NavLink to="/home"> */}
+        {/* <NavLink to="/partner"> */}
         <li className="p-4 text-20 text-white hover:text-blue cursor-pointer">
           Partner
         </li>
         {/* </NavLink> */}
-        {/* <NavLink to="/about" > */}
+        {/* <NavLink to="/contact" > */}
         <li className="p-4 text-20 text-white hover:text-blue cursor-pointer">
           Contact
         </li>
-        {/* </NavLink> */}
-        {/* <NavLink to="services"> */}
+
         <li className="p-4 text-20 text-white hover:text-blue cursor-pointer flex">
           English <IoIosArrowDown size={17} className="mt-1" />
         </li>
 
-        {/* </NavLink> */}
+        <Link to="/dashboard">
+          <li className="p-4 text-20 text-white hover:text-blue cursor-pointer">
+            Dashboard
+          </li>
+        </Link>
 
         {/* <NavLink to="/contact"> */}
         <li className="p-2 text-20 text-[#1B1464] hover:text-black cursor-pointer mt-auto">

@@ -1,11 +1,19 @@
 
 import './App.css';
 import Home from './components/Home';
+import Dashboard from './components/Dashboard'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 function App() {
   return (
-    <div className="App">
-      <Home/>
-    </div>
+    <>        
+      <Router>
+        <Route exact path="/" component={Home} />
+        <Route path="/dashboard" component={Dashboard} />
+      
+      </Router>
+      
+    </>
   );
 }
 
