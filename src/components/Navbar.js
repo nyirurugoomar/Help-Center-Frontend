@@ -8,6 +8,8 @@ import facebook from "./assets/facebook.svg";
 import line1 from "./assets/Line 1.svg";
 import line2 from "./assets/Line 2.svg";
 
+
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [loginDialog, setLoginDialog] = useState(false);
@@ -37,6 +39,7 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center h-20  px-10 bg-[#1B1464] ">
+      
       <h1 className="text-white font-bold text-[20px]">Logo|Help Center</h1>
       <ul className="hidden md:flex">
         {/* <NavLink to="/partner"> */}
@@ -48,16 +51,18 @@ const Navbar = () => {
         <li className="p-4 text-20 text-white hover:text-blue cursor-pointer">
           Contact
         </li>
-
+       
+      
         <li className="p-4 text-20 text-white hover:text-blue cursor-pointer flex">
           English <IoIosArrowDown size={17} className="mt-1" />
         </li>
 
-        <Link to="/dashboard">
-          <li className="p-4 text-20 text-white hover:text-blue cursor-pointer">
-            Dashboard
-          </li>
-        </Link>
+      <Link to="/dashboard">
+        <li className="p-4 text-20 text-white hover:text-blue cursor-pointer">
+          Dashboard
+        </li>
+      </Link>
+        
 
         {/* <NavLink to="/contact"> */}
         <li className="p-2 text-20 text-[#1B1464] hover:text-black cursor-pointer mt-auto">
