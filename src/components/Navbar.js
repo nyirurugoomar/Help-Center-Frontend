@@ -10,6 +10,7 @@ import line2 from "./assets/Line 2.svg";
 
 
 
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [loginDialog, setLoginDialog] = useState(false);
@@ -39,8 +40,10 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center h-20  px-10 bg-[#1B1464] ">
-      
+      <Link to="/">
       <h1 className="text-white font-bold text-[20px]">Logo|Help Center</h1>
+
+      </Link>
       <ul className="hidden md:flex">
         {/* <NavLink to="/partner"> */}
         <li className="p-4 text-20 text-white hover:text-blue cursor-pointer">
@@ -170,7 +173,9 @@ const Navbar = () => {
               </div>
             </div>
           </div>
+          
         )}
+
         {/* SignUp pop up */}
         {signup && (
           <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-40 flex justify-center items-center">

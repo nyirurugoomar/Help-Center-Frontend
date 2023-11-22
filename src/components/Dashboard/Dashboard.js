@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import profile from "./assets/Avatal image.png";
+import profile from "../assets/Avatal image.png";
 import { RxCross1 } from "react-icons/rx";
+import CreatedCard from "./CreatedCard";
 
 function Dashboard() {
   const [nav, setNav] = useState(false);
   const [createBox, setCreateBox] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [profilePopUp, setProfilePopUp] = useState(false);
 
   const handleNav = () => {
     setNav(!nav);
@@ -15,10 +18,17 @@ function Dashboard() {
   const toggleCreateBox = () => {
     setCreateBox(!createBox);
   };
+  const toggleProfilePopUp = () => {
+    setProfilePopUp(!profilePopUp);
+  };
+
   return (
     <>
       <div className="flex justify-between items-center h-20  px-10 bg-[#1B1464] ">
-        <h1 className="text-white font-bold text-[20px]">Logo|Help Center</h1>
+      <Link to="/">
+      <h1 className="text-white font-bold text-[20px]">Logo|Help Center</h1>
+
+      </Link>
         <ul className="hidden md:flex gap-4">
           {/* <NavLink to="/contact"> */}
           <li className="p-2 text-20 text-[#1B1464] hover:text-black cursor-pointer mt-auto">
@@ -33,9 +43,26 @@ function Dashboard() {
           <img
             src={profile}
             alt=""
-            className="w-[50px] h-[50px] rounded-full"
+            className="w-[50px] h-[50px] rounded-full cursor-pointer"
+            onClick={toggleProfilePopUp}
           />
+          {profilePopUp && (
+            <div className="absolute right-4 mt-20 bg-white border rounded shadow-md w-48">
+              <div className="py-2">
+                <button className="block px-4 py-2 text-black font-bold hover:bg-gray-100 w-full">
+                  Profile
+                </button>
+                <button className="block px-4 py-2 text-black font-bold hover:bg-gray-100 w-full">
+                  Settings
+                </button>
+                <button className="block px-4 py-2 text-[#FF0000] font-bold hover:bg-gray-100 w-full ">
+                  Logout
+                </button>
+              </div>
+            </div>
+          )}
         </ul>
+
         {createBox && (
           <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-40 flex justify-center items-center">
             <div className="bg-white p-2 rounded-lg w-[655px] h-[499px]">
@@ -46,9 +73,7 @@ function Dashboard() {
               />
               <div className="mx-20 mt-8 space-y-4">
                 <div className="ml-[10rem]">
-                
                   {selectedImage && (
-                    
                     <div>
                       <img
                         alt=""
@@ -60,16 +85,14 @@ function Dashboard() {
                         Remove
                       </button>
                     </div>
-                    
                   )}
-                    
+
                   <br />
                   <h1>Upload Company logo</h1>
                   <br />
-                    
+
                   <input
-                  
-                  className=""
+                    className=""
                     type="file"
                     name="myImage"
                     onChange={(event) => {
@@ -150,6 +173,28 @@ function Dashboard() {
           </li>
         </ul>
       </div>
+      <div className="h-full w-full">
+        <section className=" h-full py-20 bg-[#1B1464BD]">
+          <div className="md:mx-40">
+            <h2 className="text-center text-white text-3xl mb-4 font-bold">
+              Welcome Again (name of user)
+            </h2>
+            <div className=" flex mt-4">
+              <input
+                className="p-4 md:w-full  rounded-l-[20px] border-[0px] focus:outline-none "
+                type="search"
+                placeholder="Search..... "
+              />
+
+              <button className="bg-[#1B1464] p-4  text-white rounded-r-[20px] font-bold">
+                Search
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+      {/* User content */}
+     <CreatedCard/>
     </>
   );
 }
