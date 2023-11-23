@@ -49,9 +49,12 @@ function Dashboard() {
           {profilePopUp && (
             <div className="absolute right-4 mt-20 bg-white border rounded shadow-md w-48">
               <div className="py-2">
-                <button className="block px-4 py-2 text-black font-bold hover:bg-gray-100 w-full">
-                  Profile
-                </button>
+                <Link to="/profile">
+                  <button className="block px-4 py-2 text-black font-bold hover:bg-gray-100 w-full">
+                    Profile
+                  </button>
+                </Link>
+                
                 <button className="block px-4 py-2 text-black font-bold hover:bg-gray-100 w-full">
                   Settings
                 </button>
